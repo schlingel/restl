@@ -1,0 +1,11 @@
+package at.fundev.restl.utils;
+
+public class Converter {
+	public static Integer parseInt(String val) {
+		
+		
+		try {
+			
+		}
+	}
+}

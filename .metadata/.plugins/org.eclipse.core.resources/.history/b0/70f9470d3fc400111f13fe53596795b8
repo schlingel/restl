@@ -1,0 +1,49 @@
+package at.fundev.restl.request;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+/**
+ * The main 
+ */
+public class Request {
+	private static String defaultUrl;
+	
+	private URL destAddress;
+	
+	private Request(URL url) {
+		this.destAddress = url;
+	}
+	
+	public static Request get() {
+		return Request.toUrl(defaultUrl);
+	}
+	
+	private Request(String url) throws MalformedURLException {
+		this(new URL(url));
+	}
+	
+	public static Request toUrl(String url) {
+		Request request = null; 
+		
+		try {
+			request = new Request(url);
+		} catch(MalformedURLException e) {
+			request = new Request((URL)null);
+		}
+		
+		return request;
+	}
+	
+	public static Request toUrl(URL url) {
+		return new Request(url);
+	}
+	
+	public boolean hasURL() {
+		return destAddress != null;
+	}
+	
+	public static void setDefaultUrl(String url) {
+		Request.defaultUrl = url;
+	}
+}

@@ -1,0 +1,12 @@
+package at.fundev.restl.request;
+
+/**
+ * The main 
+ */
+public class Request {
+	private static final String defaultUrl;
+	
+	private Request(String url) {
+		
+	}
+}

@@ -1,0 +1,8 @@
+package at.fundev.restl.request;
+
+/**
+ * The
+ */
+public class Request {
+
+}

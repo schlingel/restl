@@ -1,0 +1,8 @@
+package at.fundev.restl.request;
+
+/**
+ * This interface is for 
+ */
+public interface RequestTransformer {
+
+}

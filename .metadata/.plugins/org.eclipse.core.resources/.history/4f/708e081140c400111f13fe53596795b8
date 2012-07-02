@@ -1,0 +1,10 @@
+package at.fundev.restl.request;
+
+/**
+ * This class is used for creating a fluid way of setting parameter of one request.
+ */
+class ParamHelper {
+	ParamHelper(Request host) {
+		
+	}
+}

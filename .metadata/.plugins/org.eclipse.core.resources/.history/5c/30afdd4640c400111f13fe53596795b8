@@ -1,0 +1,20 @@
+package at.fundev.restl.request;
+
+/**
+ * This class is used for creating a fluid way of setting parameter of one request.
+ */
+public class ParamHelper {
+	private Request host;
+	
+	private String paramName;
+	
+	ParamHelper(Request host, String name) {
+		this.host = host;
+		this.paramName = name;
+	}
+	
+	public Request setString(String val) {
+		host.addParam(paramName, value);
+		return host;
+	}
+}

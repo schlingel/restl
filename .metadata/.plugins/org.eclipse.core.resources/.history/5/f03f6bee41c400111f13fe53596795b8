@@ -1,0 +1,35 @@
+package at.fundev.restl.utils;
+
+public class Converter {
+	public static Integer parseInt(String val) {
+		try {
+			return Integer.parseInt(val);
+		} catch(NumberFormatException e) {
+			return null;
+		}
+	}
+	
+	public static Double parseDouble(String val) {
+		try {
+			return Double.parseDouble(val);
+		} catch(NumberFormatException e) {
+			return null;
+		}
+	}
+	
+	public static Float parseFloat(String val) {
+		try {
+			return Float.parseFloat(val);
+		} catch(NumberFormatException e) {
+			return null;
+		}
+	}
+
+	public static Long parseLong(String val) {
+		try {
+			return Long.parseLong(val);
+		} catch(NumberFormatException e) {
+			return null;
+		}
+	}
+}

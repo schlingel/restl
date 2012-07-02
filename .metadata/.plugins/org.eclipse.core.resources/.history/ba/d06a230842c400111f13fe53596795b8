@@ -1,0 +1,51 @@
+package at.fundev.restl.utils;
+
+/**
+ * Helper class to get a simple method for getting number values from strings without
+ * exception handling.
+ */
+public class Converter {
+	/**
+	 * Returns the Integer value or null if it's not valid.
+	 */
+	public static Integer parseInt(String val) {
+		try {
+			return Integer.parseInt(val);
+		} catch(NumberFormatException e) {
+			return null;
+		}
+	}
+	
+	/**
+	 * Returns the Double value or null if it's not valid.
+	 */
+	public static Double parseDouble(String val) {
+		try {
+			return Double.parseDouble(val);
+		} catch(NumberFormatException e) {
+			return null;
+		}
+	}
+
+	/**
+	 * Returns the Float value or null if it's not valid.
+	 */
+	public static Float parseFloat(String val) {
+		try {
+			return Float.parseFloat(val);
+		} catch(NumberFormatException e) {
+			return null;
+		}
+	}
+
+	/**
+	 * Returns the Double value or null if it's not valid.
+	 */
+	public static Long parseLong(String val) {
+		try {
+			return Long.parseLong(val);
+		} catch(NumberFormatException e) {
+			return null;
+		}
+	}
+}
