@@ -1,0 +1,7 @@
+package at.fundev.restl.service;
+
+import android.app.IntentService;
+
+public class RestlHttpService extends IntentService {
+	onHandleI
+}

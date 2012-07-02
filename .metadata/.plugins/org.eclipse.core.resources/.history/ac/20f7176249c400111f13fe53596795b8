@@ -1,0 +1,7 @@
+package at.fundev.restl.request;
+
+public enum Http {
+	public final static  int POST = 0;
+	
+	public static final int GET =
+}

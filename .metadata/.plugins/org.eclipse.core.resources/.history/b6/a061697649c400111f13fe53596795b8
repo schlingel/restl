@@ -1,0 +1,10 @@
+package at.fundev.restl.request;
+
+public enum Http {
+	Post,
+	Get,
+	Delete,
+	Put;
+	
+	public final int POST = 0;
+}

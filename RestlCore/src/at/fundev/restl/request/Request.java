@@ -6,10 +6,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 /**
  * The main 
  */
 public class Request {
+	public static final String MIXED_CONTENT_NAME = "MIXED_CONTENT_NAME";
+	
+	public static final String MIXED_CONTENT_NAME_IDENTIFIER = "MIXED_CONTENT_NAME_IDENTIFIER";
+	
+	public static final String HTTP_TYPE = "HTTP_TYPE";
 	/**
 	 * The default address for a request. This can be set app wide.
 	 */
@@ -21,15 +29,18 @@ public class Request {
 	private URL destAddress;
 	
 	/**
+	 * The http method for the request. if it's not set it's defaulted to GET.
+	 */
+	private HttpMethod method;
+	
+	/**
 	 * Contains the parameters of the request in String representation.
 	 */
 	private HashMap<String, String> params;
 	
 	/**
-	 * Contains the bytes of the file upload. If needed. 
+	 * The list of the request transformers.
 	 */
-	private byte[] mixedContent;
-	
 	private List<RequestTransformer> requestTransformers;
 	
 	/**
@@ -37,7 +48,6 @@ public class Request {
 	 * are problems with the defaultURL.
 	 */
 	private Request(URL url) {
-		this.mixedContent = null;
 		this.params = new HashMap<String, String>();
 		this.destAddress = url;
 		this.requestTransformers = new ArrayList<RequestTransformer>();
@@ -114,12 +124,40 @@ public class Request {
 		return this;
 	}
 	
+	public Request setType(HttpMethod method) {
+		this.method = method;
+		return this;
+	}
+	
 	/**
 	 * Adds an parameter with the given name to the request object. Use the setter of the returned
 	 * helper object to add the value.
 	 */
 	public RequestParamHelper addParam(String name) {
 		return new RequestParamHelper(this, name);
+	}
+	
+	/**
+	 * Creates an Intent for sending the request to the http intent service. Attention: RequestTransformer could alter the data so executing this method twice could bare to different results!
+	 * @return
+	 */
+	public Intent create() {
+		Intent i = new Intent();
+		Bundle extras = new Bundle();
+		Request req = this;
+		
+		for(RequestTransformer trans : requestTransformers) {
+			req = trans.transform(req);
+		}
+		
+		for(String key : params.keySet()) {
+			extras.putString(key, params.get(key));
+		}
+		
+		extras.putInt(HTTP_TYPE, HttpMethod.asNumeric(method));
+		i.putExtras(extras);
+		
+		return i;
 	}
 	
 	/**

@@ -1,0 +1,8 @@
+package at.fundev.restl.service;
+
+import android.app.IntentService;
+import android.content.Intent;
+
+public class RestlHttpService {
+
+}

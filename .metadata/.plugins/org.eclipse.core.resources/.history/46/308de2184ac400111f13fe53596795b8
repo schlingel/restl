@@ -1,0 +1,28 @@
+package at.fundev.restl.request;
+
+public enum HttpMethod {
+	Post,
+	Get,
+	Delete,
+	Put;
+	
+	public final int POST = 0;
+	
+	public final int GET = 1;
+	
+	public final int DELETE = 2;
+	
+	public final int PUT = 4;
+	
+	public static int asNumeric(HttpMethod type) {
+		if(type == HttpMethod.Post) {
+			return POST;
+		} else if(type == HttpMethod.Delete) {
+			return DELETE;
+		} else if(type == HttpMethod.Put) {
+			return PUT;
+		} else {
+			return GET;
+		}
+	}
+}
