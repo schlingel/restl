@@ -1,0 +1,7 @@
+package at.fundev.restl.service;
+
+import android.app.Service;
+
+public class RestlHttpService extends Service {
+	
+}

@@ -1,0 +1,8 @@
+package at.fundev.restl.service;
+
+public class RestlLooper extends Thread {
+	private ThreadNotifier target;
+	
+	
+	
+}

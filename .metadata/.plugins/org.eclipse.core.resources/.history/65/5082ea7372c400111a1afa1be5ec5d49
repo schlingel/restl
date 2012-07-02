@@ -1,0 +1,16 @@
+package at.fundev.restl.service;
+
+import android.os.Handler;
+
+public class RestlHttpFetcher extends Thread {
+	private Handler hostHandler;
+	
+	public RestlHttpFetcher(Handler target) {
+		
+	}
+	
+	@Override
+	public void run() {
+
+	}
+}

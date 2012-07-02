@@ -1,0 +1,14 @@
+package at.fundev.restl.service;
+
+import android.os.Handler;
+
+public class RestlLooper extends Thread {
+	private ThreadNotifier target;
+	
+	private Handler handler;
+	
+	public RestlLooper(ThreadNotifier target) {
+		this.target = target;
+	}
+	 
+}

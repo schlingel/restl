@@ -1,0 +1,19 @@
+package at.fundev.restl.service;
+
+import android.os.Handler;
+import android.os.Message;
+
+public class MessageHandler extends Handler {
+	private ThreadNotifier target;
+	
+	public MessageHandler(ThreadNotifier target) {
+		super();
+	}
+	
+	@Override
+	public void handleMessage(Message msg) {
+		if(target != null) {
+			target.handle(msg);
+		}
+	}
+}

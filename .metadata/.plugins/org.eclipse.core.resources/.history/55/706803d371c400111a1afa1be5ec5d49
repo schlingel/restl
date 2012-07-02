@@ -1,0 +1,34 @@
+package at.fundev.restl.service;
+
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
+
+/**
+ * <p>A own implementation of a IntentService. This is used to be able to control how the job queue is processed. The service itself is written that way to enable multiple worker threads at once.</p>
+ * <p>For details to the Request the service understands, check {@see Request}
+ */
+public class RestlHttpService extends Service {
+
+	/**
+	 * Do not use! This service is controllyed by sending intents like an intent service!
+	 */
+	@Override
+	public IBinder onBind(Intent intent) {
+		return null;
+	}
+	
+	/**
+	 * This method handles every incoming request.
+	 */
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		return super.onStartCommand(intent, flags, startId);
+	}
+	
+	@Override
+	public void onCreate() {
+		super.onCreate();
+	}
+	
+}

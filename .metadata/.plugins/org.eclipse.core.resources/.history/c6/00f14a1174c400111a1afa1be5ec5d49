@@ -1,0 +1,8 @@
+package at.fundev.restl.service;
+
+public class MessageHandler extends Thread {
+	private ThreadNotifier target;
+	
+	
+	
+}

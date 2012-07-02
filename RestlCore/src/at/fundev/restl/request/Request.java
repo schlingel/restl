@@ -1,23 +1,25 @@
 package at.fundev.restl.request;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 
 /**
- * The main 
+ * The main class for creating requests. This class is also used for write and reading the needed information to parcelables.
  */
 public class Request {
+	public static final String REQUEST_ID = "REQUEST_ID";
+	
 	public static final String MIXED_CONTENT_NAME = "MIXED_CONTENT_NAME";
 	
 	public static final String MIXED_CONTENT_NAME_IDENTIFIER = "MIXED_CONTENT_NAME_IDENTIFIER";
 	
 	public static final String HTTP_TYPE = "HTTP_TYPE";
+	
 	/**
 	 * The default address for a request. This can be set app wide.
 	 */
@@ -26,7 +28,7 @@ public class Request {
 	/**
 	 * The target URL address of the Request instance.
 	 */
-	private URL destAddress;
+	private String destAddress;
 	
 	/**
 	 * The http method for the request. if it's not set it's defaulted to GET.
@@ -36,22 +38,12 @@ public class Request {
 	/**
 	 * Contains the parameters of the request in String representation.
 	 */
-	private HashMap<String, String> params;
+	private ContentValues params;
 	
 	/**
 	 * The list of the request transformers.
 	 */
 	private List<RequestTransformer> requestTransformers;
-	
-	/**
-	 * Creates a request from the given URL object. Can create invalid objects if there
-	 * are problems with the defaultURL.
-	 */
-	private Request(URL url) {
-		this.params = new HashMap<String, String>();
-		this.destAddress = url;
-		this.requestTransformers = new ArrayList<RequestTransformer>();
-	}
 	
 	/**
 	 * Creates a request to the default URL object.
@@ -63,8 +55,10 @@ public class Request {
 	/**
 	 * Creates a request object from the given URL address.
 	 */
-	private Request(String url) throws MalformedURLException {
-		this(new URL(url));
+	private Request(String url) {
+		this.params = new ContentValues();
+		this.destAddress = url;
+		this.requestTransformers = new ArrayList<RequestTransformer>();
 	}
 	
 	/**
@@ -72,23 +66,6 @@ public class Request {
 	 * set URL if there are problems with the given address.
 	 */
 	public static Request toUrl(String url) {
-		Request request = null; 
-		
-		try {
-			request = new Request(url);
-		} catch(MalformedURLException e) {
-			request = new Request((URL)null);
-		}
-		
-		return request;
-	}
-	
-	/**
-	 * Creates a new request object to teh given URL.
-	 * @param url
-	 * @return
-	 */
-	public static Request toUrl(URL url) {
 		return new Request(url);
 	}
 	
@@ -111,7 +88,7 @@ public class Request {
 	 * Returns all parameter for the current request object.
 	 * @return
 	 */
-	public HashMap<String, String> getParams() {
+	public ContentValues getParams() {
 		return params;
 	}
 	
@@ -150,8 +127,8 @@ public class Request {
 			req = trans.transform(req);
 		}
 		
-		for(String key : params.keySet()) {
-			extras.putString(key, params.get(key));
+		for(Entry<String, Object> entry : params.valueSet()) {
+			extras.putString(entry.getKey(), params.getAsString(entry.getKey()));
 		}
 		
 		extras.putInt(HTTP_TYPE, HttpMethod.asNumeric(method));

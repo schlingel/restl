@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="26" version="2.0">
+<workbenchAdvisor/>
+<window height="1040" width="960" x="0" y="0">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="232" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="adt.actionSet.avdManager" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="adt.actionSet.lint" itemType="typeToolBarContribution" x="53" y="22"/>
+<coolItem id="adt.actionSet.wizards" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="130" y="22"/>
+<coolItem id="com.aptana.ui.globalActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.aptana.editor.text" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1341229726683" focus="true" label="Workspace - Java">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="RestlCore Manifest" path="C:/Users/zombie/restl/RestlCore/AndroidManifest.xml" title="RestlCore Manifest" tooltip="RestlCore/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/AndroidManifest.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Request.java" partName="Request.java" path="C:/Users/zombie/restl/RestlCore/src/at/fundev/restl/request/Request.java" title="Request.java" tooltip="RestlCore/src/at/fundev/restl/request/Request.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/src/at/fundev/restl/request/Request.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3922" selectionTopPixel="1864"/>
+</editor>
+<editor id="com.aptana.editor.text" name="LICENSE" partName="LICENSE" path="C:/Users/zombie/restl/RestlCore/LICENSE" title="LICENSE" tooltip="RestlCore/LICENSE" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/LICENSE"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1004" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RequestTransformer.java" partName="RequestTransformer.java" path="C:/Users/zombie/restl/RestlCore/src/at/fundev/restl/request/RequestTransformer.java" title="RequestTransformer.java" tooltip="RestlCore/src/at/fundev/restl/request/RequestTransformer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/src/at/fundev/restl/request/RequestTransformer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="312" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RequestParamHelper.java" partName="RequestParamHelper.java" path="C:/Users/zombie/restl/RestlCore/src/at/fundev/restl/request/RequestParamHelper.java" title="RequestParamHelper.java" tooltip="RestlCore/src/at/fundev/restl/request/RequestParamHelper.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/src/at/fundev/restl/request/RequestParamHelper.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="477" selectionTopPixel="139"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Converter.java" partName="Converter.java" path="C:/Users/zombie/restl/RestlCore/src/at/fundev/restl/utils/Converter.java" title="Converter.java" tooltip="RestlCore/src/at/fundev/restl/utils/Converter.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/src/at/fundev/restl/utils/Converter.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1081" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RestlHttpService.java" partName="RestlHttpService.java" path="C:/Users/zombie/restl/RestlCore/src/at/fundev/restl/service/RestlHttpService.java" title="RestlHttpService.java" tooltip="RestlCore/src/at/fundev/restl/service/RestlHttpService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/src/at/fundev/restl/service/RestlHttpService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="69" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadNotifier.java" partName="ThreadNotifier.java" path="C:/Users/zombie/restl/RestlCore/src/at/fundev/restl/service/ThreadNotifier.java" title="ThreadNotifier.java" tooltip="RestlCore/src/at/fundev/restl/service/ThreadNotifier.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/src/at/fundev/restl/service/ThreadNotifier.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="134" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpMethod.java" partName="HttpMethod.java" path="C:/Users/zombie/restl/RestlCore/src/at/fundev/restl/request/HttpMethod.java" title="HttpMethod.java" tooltip="RestlCore/src/at/fundev/restl/request/HttpMethod.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RestlCore/src/at/fundev/restl/request/HttpMethod.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="230" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Errors"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1341229726683">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="adt.actionSet.wizards"/>
+<alwaysOnActionSet id="adt.actionSet.refactorings"/>
+<alwaysOnActionSet id="adt.actionSet.avdManager"/>
+<alwaysOnActionSet id="adt.actionSet.lint"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="com.aptana.browser.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ruby.debug.ui.RubyDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="com.android.ide.eclipse.adt.project.NewProjectWizard"/>
+<new_wizard_action id="com.android.ide.eclipse.editors.wizards.NewXmlFileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="com.android.ide.eclipse.ddms.Perspective"/>
+<perspective_action id="com.android.ide.eclipse.hierarchyviewer.PixelPerfectPespective"/>
+<perspective_action id="com.android.ide.eclipse.hierarchyviewer.TreeViewPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1b94ed3" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.7496136" ratioLeft="485" ratioRight="162" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@fa385" ratio="0.7493333" ratioLeft="562" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.49896908" ratioLeft="242" ratioRight="243" relationship="4" relative="org.eclipse.ui.internal.ViewStack@fa385">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/request/Request.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/request/RequestTransformer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/request/ParamHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/utils/Converter.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/request/RequestParamHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/service/RestlHttpService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/service/ThreadNotifier.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/request/Http.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RestlCore/src/at/fundev/restl/request/HttpMethod.java"/>
+</editors>
+<item historyLabel="ParamHelper.java" index="2">
+<position info="not_deleted" x="1476" y="0"/>
+</item>
+<item historyLabel="ParamHelper.java" index="2">
+<position info="not_deleted" x="1225" y="0"/>
+</item>
+<item historyLabel="Converter.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Converter.java" index="3">
+<position info="not_deleted" x="263" y="0"/>
+</item>
+<item historyLabel="Converter.java" index="3">
+<position info="not_deleted" x="1012" y="0"/>
+</item>
+<item historyLabel="Converter.java" index="3">
+<position info="not_deleted" x="1067" y="0"/>
+</item>
+<item historyLabel="ParamHelper.java" index="2">
+<position info="not_deleted" x="1225" y="0"/>
+</item>
+<item historyLabel="ParamHelper.java" index="2">
+<position info="not_deleted" x="659" y="0"/>
+</item>
+<item historyLabel="ParamHelper.java" index="2">
+<position info="not_deleted" x="32" y="0"/>
+</item>
+<item historyLabel="RequestTransformer.java" index="1">
+<position info="not_deleted" x="166" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="2622" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3340" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3266" y="0"/>
+</item>
+<item historyLabel="ParamHelper.java" index="2">
+<position info="not_deleted" x="32" y="0"/>
+</item>
+<item historyLabel="ParamHelper.java" index="2">
+<position/>
+</item>
+<item historyLabel="RequestParamHelper.java" index="4">
+<position info="not_deleted" x="149" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="2641" y="0"/>
+</item>
+<item historyLabel="RequestTransformer.java" index="1">
+<position info="not_deleted" x="312" y="0"/>
+</item>
+<item historyLabel="RequestParamHelper.java" index="4">
+<position info="not_deleted" x="149" y="0"/>
+</item>
+<item historyLabel="Converter.java" index="3">
+<position info="not_deleted" x="1081" y="0"/>
+</item>
+<item historyLabel="RequestTransformer.java" index="1">
+<position info="not_deleted" x="312" y="0"/>
+</item>
+<item historyLabel="RequestParamHelper.java" index="4">
+<position info="not_deleted" x="149" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="2641" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3582" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3762" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3852" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3854" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="456" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3946" y="0"/>
+</item>
+<item historyLabel="RequestParamHelper.java" index="4">
+<position info="not_deleted" x="477" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3950" y="0"/>
+</item>
+<item historyLabel="RestlHttpService.java" index="5">
+<position info="not_deleted" x="69" y="0"/>
+</item>
+<item historyLabel="ThreadNotifier.java" index="6">
+<position info="not_deleted" x="134" y="0"/>
+</item>
+<item historyLabel="Http.java" index="7">
+<position info="not_deleted" x="214" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="843" y="0"/>
+</item>
+<item historyLabel="Http.java" index="7">
+<position info="not_deleted" x="214" y="0"/>
+</item>
+<item historyLabel="Http.java" index="7">
+<position/>
+</item>
+<item historyLabel="HttpMethod.java" index="8">
+<position info="not_deleted" x="85" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3922" y="0"/>
+</item>
+<item historyLabel="HttpMethod.java" index="8">
+<position info="not_deleted" x="85" y="0"/>
+</item>
+<item historyLabel="HttpMethod.java" index="8">
+<position info="not_deleted" x="230" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3922" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3890" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3919" y="0"/>
+</item>
+<item historyLabel="Request.java" index="0">
+<position info="not_deleted" x="3922" y="0"/>
+</item>
+<item active="true" historyLabel="RestlHttpService.java" index="5">
+<position info="not_deleted" x="69" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+<trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Http.java" tooltip="RestlCore/src/at/fundev/restl/request/Http.java">
+<persistable path="/RestlCore/src/at/fundev/restl/request/Http.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThreadNotifier.java" tooltip="RestlCore/src/at/fundev/restl/service/ThreadNotifier.java">
+<persistable path="/RestlCore/src/at/fundev/restl/service/ThreadNotifier.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RestlHttpService.java" tooltip="RestlCore/src/at/fundev/restl/service/RestlHttpService.java">
+<persistable path="/RestlCore/src/at/fundev/restl/service/RestlHttpService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Converter.java" tooltip="RestlCore/src/at/fundev/restl/utils/Converter.java">
+<persistable path="/RestlCore/src/at/fundev/restl/utils/Converter.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ParamHelper.java" tooltip="RestlCore/src/at/fundev/restl/request/ParamHelper.java">
+<persistable path="/RestlCore/src/at/fundev/restl/request/ParamHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RequestTransformer.java" tooltip="RestlCore/src/at/fundev/restl/request/RequestTransformer.java">
+<persistable path="/RestlCore/src/at/fundev/restl/request/RequestTransformer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.text" name="LICENSE" tooltip="RestlCore/LICENSE">
+<persistable path="/RestlCore/LICENSE"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Request.java" tooltip="RestlCore/src/at/fundev/restl/request/Request.java">
+<persistable path="/RestlCore/src/at/fundev/restl/request/Request.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RestlCoreActivity.java" tooltip="RestlCore/src/at/fundev/restl/RestlCoreActivity.java">
+<persistable path="/RestlCore/src/at/fundev/restl/RestlCoreActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="RestlCore/AndroidManifest.xml">
+<persistable path="/RestlCore/AndroidManifest.xml"/>
+</file>
+</mruList>
+</workbench>

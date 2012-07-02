@@ -1,0 +1,13 @@
+package at.fundev.restl.service;
+
+import android.os.Message;
+
+/**
+ * Interface used make it possible to seperate the service and the message handling code cleaner.
+ */
+public interface ThreadNotifier {
+	/**
+	 * A route through method to include the handling method directly within the service.
+	 */
+	public void handle(Message msg);
+}

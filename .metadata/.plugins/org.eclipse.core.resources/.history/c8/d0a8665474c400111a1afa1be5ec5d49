@@ -1,0 +1,21 @@
+package at.fundev.restl.service;
+
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Handler.Callback;
+
+public class RestlLooper extends Thread {
+	private Callback target;
+	private Handler handler;
+	
+	public RestlLooper(Callback target) {
+		this.target = target;
+		this.handler = new Handler(target);
+	}
+	
+	@Override
+	public void run() {
+		Looper.prepare();
+	}
+	 
+}

@@ -1,0 +1,15 @@
+package at.fundev.restl.service;
+
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+
+public class MessageHandler extends Looper {
+	private ThreadNotifier target;
+	
+	public MessageHandler(ThreadNotifier target) {
+		
+	}
+	
+	
+}

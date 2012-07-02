@@ -1,0 +1,5 @@
+package at.fundev.restl.service;
+
+public class RestlHttpFetcher extends Thread {
+	
+}
