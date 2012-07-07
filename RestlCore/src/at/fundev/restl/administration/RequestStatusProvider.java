@@ -13,6 +13,7 @@ import android.text.TextUtils;
  * ContentProvider for the request status table.
  */
 public class RequestStatusProvider extends ContentProvider {
+	
 	/**
 	 * The core part of the content provider path.
 	 */
@@ -31,6 +32,8 @@ public class RequestStatusProvider extends ContentProvider {
 	private static final int STATUS_ID = 20;
 	
 	private static final String BASE_PATH = "restl";
+	
+	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH);
 	
 	static {
 		uriMatcher.addURI(AUTHORITY, BASE_PATH, STATUS);
