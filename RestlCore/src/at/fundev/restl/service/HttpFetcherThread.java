@@ -1,0 +1,61 @@
+package at.fundev.restl.service;
+
+import android.content.Intent;
+import android.os.Handler;
+import at.fundev.restl.request.Request;
+
+/**
+ * <p>The worker thread implementation. A worker thread just processes one request at a time. When it finished, it writes
+ * the result to the disk if possible and notifies the service that it finished. After that it exits.</p>
+ * <p>The service starts than the next thread if needed.</p>
+ */
+public class HttpFetcherThread extends Thread {
+	/**
+	 * The service handler object. Needed to notify the service when the thread finishes.
+	 */
+	private Handler serviceHandler;
+	
+	/**
+	 * The request intent. Contains all needed data like the target url.
+	 */
+	private Intent requestIntent;
+	
+	/**
+	 * Initializes the worker thread. The handler is needed to notify the service when the request finishes, the intent contains
+	 * all needed data for processing the request.
+	 * @param serviceHandler
+	 * @param requestIntent
+	 */
+	public HttpFetcherThread(Handler serviceHandler, Intent requestIntent) {
+		this.serviceHandler = serviceHandler;
+		this.requestIntent = requestIntent;
+	}
+	
+	/**
+	 * <p>Excutes the request if possible. To start the network communication the target url and the request ID is required.</p>
+	 * <p>When the URL is in the intent extras, the thread does the following things:</p>
+	 * <ol>
+	 * <li>Sets the status of the request to <i>processing</i>.</li>
+	 * <li>Opens the URLConnection and tries to fetch the data.</li>
+	 * <li>Sets the status of the request to finished if the call <i>succeeded</i> (HTTP errors are currently not handled.), to <i>error</i> otherwise.</li>
+	 * </ol>
+	 */
+	@Override
+	public void run() {
+		if(isIntentValid()) {
+			// TODO: update status to processing
+		} else {
+			// TODO: update status to error
+		}
+	}
+	
+	/**
+	 * Checks if the intent contains the request ID and the target url.
+	 * @return
+	 */
+	private boolean isIntentValid() {
+		return (requestIntent != null) &&
+				requestIntent.getExtras().containsKey(Request.REQUEST_ID) &&
+				requestIntent.getExtras().containsKey(Request.REQUEST_URL);
+	}
+}

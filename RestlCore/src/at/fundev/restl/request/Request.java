@@ -14,6 +14,8 @@ import android.os.Bundle;
 public class Request {
 	public static final String REQUEST_ID = "REQUEST_ID";
 	
+	public static final String REQUEST_URL = "REQUEST_URL";
+	
 	public static final String MIXED_CONTENT_NAME = "MIXED_CONTENT_NAME";
 	
 	public static final String MIXED_CONTENT_NAME_IDENTIFIER = "MIXED_CONTENT_NAME_IDENTIFIER";
@@ -131,6 +133,7 @@ public class Request {
 			extras.putString(entry.getKey(), params.getAsString(entry.getKey()));
 		}
 		
+		extras.putString(REQUEST_URL, destAddress);
 		extras.putInt(HTTP_TYPE, HttpMethod.asNumeric(method));
 		i.putExtras(extras);
 		
