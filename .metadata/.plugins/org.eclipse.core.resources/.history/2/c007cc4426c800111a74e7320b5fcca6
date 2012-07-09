@@ -1,0 +1,9 @@
+package at.fundev.restl.administration;
+
+public class Status {
+	Created,
+	Pending,
+	Processing,
+	Finished,
+	Error;
+}

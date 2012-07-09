@@ -1,0 +1,21 @@
+package at.fundev.restl.service;
+
+import java.util.Properties;
+
+import android.content.Context;
+
+public class SettingProperties extends Properties {
+	private static final long serialVersionUID = 6856828796766704061L;
+
+	private static final int MAX_WORKER_THREADS = 5;
+	
+	private SettingProperties() {
+		super();
+	}
+	
+	public static SettingProperties from(Context context) {
+		SettingProperties props = new SettingProperties();
+		
+		return props;
+	}
+}

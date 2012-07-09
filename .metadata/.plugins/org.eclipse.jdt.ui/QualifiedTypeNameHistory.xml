@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="java.lang.Float"/>
 <fullyQualifiedTypeName name="java.lang.Long"/>
 <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
-<fullyQualifiedTypeName name="at.fundev.restl.utils.Converter"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -19,4 +18,14 @@
 <fullyQualifiedTypeName name="android.os.Message"/>
 <fullyQualifiedTypeName name="at.fundev.restl.request.Request"/>
 <fullyQualifiedTypeName name="at.fundev.restl.request.HttpMethod"/>
+<fullyQualifiedTypeName name="android.os.Parcelable.Creator"/>
+<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+<fullyQualifiedTypeName name="android.content.ContentValues"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="at.fundev.restl.administration.StatusTable"/>
+<fullyQualifiedTypeName name="android.net.Uri.Builder"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
+<fullyQualifiedTypeName name="at.fundev.restl.administration.RequestStatusProvider"/>
+<fullyQualifiedTypeName name="at.fundev.restl.utils.Converter"/>
 </qualifiedTypeNameHistroy>

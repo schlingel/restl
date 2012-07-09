@@ -13,6 +13,8 @@ import at.fundev.restl.utils.Converter;
 public class RequestStatusHelper {
 	private static final String SQLITE_DATE_FORMAT = "YYYY-MM-DD HH:MM:SS.SSS";
 	
+	private static final String ROW_ENTRY_URI = RequestStatusProvider.CONTENT_URI + "/%d";
+	
 	/**
 	 * The content provider used to operate on the DB.
 	 */
@@ -54,5 +56,23 @@ public class RequestStatusHelper {
 	private String timestamp() {
 		Calendar c = Calendar.getInstance();
 		return dateFormat.format(c.getTime());
+	}
+	
+	/**
+	 * Sets the status of the status entry with the given id to the given object if the object is not null.
+	 * @param id
+	 * @param status
+	 */
+	public void setStatus(long id, Status status) {
+		if(status != null) {
+			ContentValues values = new ContentValues();
+			values.put(StatusTable.COLUMN_STATUS, Status.toInteger(status));
+			
+			provider.update(
+					Uri.parse(String.format(ROW_ENTRY_URI, id)), 
+					values, 
+					null, 
+					null);
+		}
 	}
 }

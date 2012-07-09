@@ -1,0 +1,8 @@
+package at.fundev.restl.administration;
+
+/**
+ * <p>This class is used to </p>
+ */
+public class RequestStatusHelper {
+
+}

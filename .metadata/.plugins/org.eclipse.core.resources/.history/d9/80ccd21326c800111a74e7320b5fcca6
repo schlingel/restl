@@ -1,0 +1,13 @@
+package at.fundev.restl.administration;
+
+/**
+ * <p>This class is used to operate on the request status DB.</p>
+ */
+public class RequestStatusHelper {
+	private long createNewRequest() {
+		long id = -1;
+		
+		
+		return -1;
+	}
+}

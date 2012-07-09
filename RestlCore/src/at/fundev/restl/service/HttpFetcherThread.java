@@ -2,6 +2,9 @@ package at.fundev.restl.service;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.os.Message;
+import at.fundev.restl.administration.RequestStatusHelper;
+import at.fundev.restl.administration.Status;
 import at.fundev.restl.request.Request;
 
 /**
@@ -11,6 +14,11 @@ import at.fundev.restl.request.Request;
  */
 public class HttpFetcherThread extends Thread {
 	/**
+	 * Used to package the finished intent to the result. 
+	 */
+	public static final String RESULT_INTENT_KEY = "RESULT_INTENT_KEY";
+	
+	/**
 	 * The service handler object. Needed to notify the service when the thread finishes.
 	 */
 	private Handler serviceHandler;
@@ -19,6 +27,11 @@ public class HttpFetcherThread extends Thread {
 	 * The request intent. Contains all needed data like the target url.
 	 */
 	private Intent requestIntent;
+	
+	/**
+	 * The status helper object to change the status of the received request.
+	 */
+	private RequestStatusHelper status;
 	
 	/**
 	 * Initializes the worker thread. The handler is needed to notify the service when the request finishes, the intent contains
@@ -42,11 +55,52 @@ public class HttpFetcherThread extends Thread {
 	 */
 	@Override
 	public void run() {
+		long id = requestIntent.getExtras().getLong(Request.REQUEST_ID);
+		Message result = new Message();
+		
+		
 		if(isIntentValid()) {
-			// TODO: update status to processing
+			status.setStatus(id, Status.Processing);
+			result = fetchRequestAndAppendResult(id, result);
 		} else {
-			// TODO: update status to error
+			result = setAsErrorMessage(id, result, "Request intent is not valid!", null);
 		}
+		
+		serviceHandler.handleMessage(result);
+	}
+	
+	/**
+	 * <p>Tries to execute the request and appends the result. If it succeeds the status
+	 * in the DB is set to Finished, otherwise to Error.</p>
+	 * @param msg
+	 * @return
+	 */
+	private Message fetchRequestAndAppendResult(long requestID, Message msg) {
+		
+		
+		
+		return msg;
+	}
+	
+	/**
+	 * <p>Creates an error message. An error message contains three properties:</p>
+	 * <ul>
+	 * <li>Request ID</li>
+	 * <li>Error Message</li>
+	 * <li>Error Exception</li>
+	 * </ul>
+	 * @param requestID
+	 * @param msg
+	 * @return
+	 */
+	private Message setAsErrorMessage(long requestID, Message msg, String errMsg, Exception exc) {
+		status.setStatus(requestID, Status.Error);
+		
+		msg.getData().putLong(Request.REQUEST_ID, requestID);
+		msg.getData().putString(Request.REQUEST_ERROR_MESSAGE, errMsg);
+		msg.getData().putSerializable(Request.REQUEST_ERROR, exc);
+		
+		return msg;
 	}
 	
 	/**

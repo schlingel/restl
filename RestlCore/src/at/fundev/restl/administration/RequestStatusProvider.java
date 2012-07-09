@@ -200,8 +200,9 @@ public class RequestStatusProvider extends ContentProvider {
 				break;
 			case STATUS_ID:
 				String id = uri.getLastPathSegment();
-					rowsUpdated = db.update(StatusTable.TABLE_STATUS, values, StatusTable.COLUMN_ID + "=" + id, null);
+
 				if(TextUtils.isEmpty(selection)) {
+					rowsUpdated = db.update(StatusTable.TABLE_STATUS, values, StatusTable.COLUMN_ID + "=" + id, null);
 				} else {
 					rowsUpdated = db.update(StatusTable.TABLE_STATUS, values, StatusTable.COLUMN_ID + "=" + id + " and " + selection, selectionArgs);				
 				}

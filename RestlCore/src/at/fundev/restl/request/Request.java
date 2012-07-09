@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
+import at.fundev.restl.administration.RequestStatusHelper;
 
 /**
  * The main class for creating requests. This class is also used for write and reading the needed information to parcelables.
@@ -16,11 +17,20 @@ public class Request {
 	
 	public static final String REQUEST_URL = "REQUEST_URL";
 	
+	public static final String REQUEST_ERROR = "REQUEST_ERROR";
+	
+	public static final String REQUEST_ERROR_MESSAGE = "REQUEST_ERROR_MESSAGE";
+	
 	public static final String MIXED_CONTENT_NAME = "MIXED_CONTENT_NAME";
 	
 	public static final String MIXED_CONTENT_NAME_IDENTIFIER = "MIXED_CONTENT_NAME_IDENTIFIER";
 	
 	public static final String HTTP_TYPE = "HTTP_TYPE";
+	
+	/**
+	 * A helper object.
+	 */
+	private RequestStatusHelper statusHelper;
 	
 	/**
 	 * The default address for a request. This can be set app wide.
@@ -58,6 +68,7 @@ public class Request {
 	 * Creates a request object from the given URL address.
 	 */
 	private Request(String url) {
+		this.statusHelper = new RequestStatusHelper();
 		this.params = new ContentValues();
 		this.destAddress = url;
 		this.requestTransformers = new ArrayList<RequestTransformer>();
@@ -133,6 +144,7 @@ public class Request {
 			extras.putString(entry.getKey(), params.getAsString(entry.getKey()));
 		}
 		
+		extras.putLong(REQUEST_ID, statusHelper.createNewRequest());
 		extras.putString(REQUEST_URL, destAddress);
 		extras.putInt(HTTP_TYPE, HttpMethod.asNumeric(method));
 		i.putExtras(extras);

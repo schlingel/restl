@@ -1,0 +1,71 @@
+package at.fundev.restl.service;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+import android.app.Service;
+import android.content.Intent;
+import android.os.Handler.Callback;
+import android.os.IBinder;
+import android.os.Message;
+import at.fundev.restl.administration.RequestStatusHelper;
+import at.fundev.restl.request.Request;
+
+/**
+ * <p>A own implementation of a IntentService. This is used to be able to control how the job queue is processed. The service itself is written that way to enable multiple worker threads at once.</p>
+ * <p>For details to the Request the service understands, check {@see Request}
+ */
+public class RestlHttpService extends Service implements Callback {
+	/**
+	 * Contains the jobs represented by intents.
+	 */
+	private Queue<Intent> jobQueue;
+	
+	private RequestStatusHelper status
+	
+	/**
+	 * Do not use! This service is controllyed by sending intents like an intent service!
+	 */
+	@Override
+	public IBinder onBind(Intent intent) {
+		return null;
+	}
+	
+	/**
+	 * This method handles every incoming request.
+	 */
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		synchronized (jobQueue) {
+			long id = intent.getExtras().getLong(Request.REQUEST_ID);
+			
+			jobQueue.offer(intent);			
+		}
+		
+		process();
+		return super.onStartCommand(intent, flags, startId);
+	}
+	
+	/**
+	 * Checks if there are intents in the job queue and if there are, starts processing.
+	 */
+	private void process() {
+		synchronized(jobQueue) {
+			
+		}
+	}
+	
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		jobQueue = new LinkedList<Intent>();
+	}
+
+	/**
+	 * Here the result of a fetched website is stored.
+	 */
+	public boolean handleMessage(Message msg) {
+		return false;
+	}
+	
+}

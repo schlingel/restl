@@ -1,0 +1,5 @@
+package at.fundev.restl.administration;
+
+public class Status {
+
+}

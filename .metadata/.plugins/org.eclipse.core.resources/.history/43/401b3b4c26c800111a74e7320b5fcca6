@@ -1,0 +1,9 @@
+package at.fundev.restl.administration;
+
+public enum Status {
+	Created,
+	Pending,
+	Processing,
+	Finished,
+	Error;
+}

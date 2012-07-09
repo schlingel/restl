@@ -1,0 +1,14 @@
+package at.fundev.restl.administration;
+
+/**
+ * The Status enumeration. Representing the Status.
+ */
+public enum Status {
+	Created,
+	Pending,
+	Processing,
+	Finished,
+	Error;
+	
+	
+}

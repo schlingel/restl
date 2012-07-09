@@ -1,0 +1,42 @@
+package at.fundev.restl.administration;
+
+import android.os.Parcelable.Creator;
+
+/**
+ * The Status enumeration. Representing the Status.
+ */
+public enum Status {
+	Created,
+	Pending,
+	Processing,
+	Finished,
+	Error;
+	
+	public static int CREATED = 0;
+	
+	public static int PENDING = 1;
+	
+	public static int PROCESSING = 2;
+	
+	public static int FINISHED = 3;
+	
+	public static int ERROR = 4;
+	
+	public static Status toStatus(int dRepresentation) {
+		switch(dRepresentation) {
+		case CREATED:
+			break;
+		case PENDING:
+			break;
+		case PROCESSING:
+			break;
+		case FINISHED:
+			break;
+		case ERROR:
+			break;
+		default:
+			throw new IllegalArgumentException("");
+			break;
+		}
+	}
+}

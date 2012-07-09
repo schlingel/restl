@@ -1,0 +1,11 @@
+package at.fundev.restl.service;
+
+import java.util.Properties;
+
+public class SettingProperties extends Properties {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6856828796766704061L;
+
+}

@@ -1,0 +1,54 @@
+package at.fundev.restl.service;
+
+import java.io.IOException;
+import java.util.Properties;
+
+import android.content.Context;
+
+/**
+ * 
+ */
+public class SettingProperties extends Properties {
+	private static final long serialVersionUID = 6856828796766704061L;
+
+	/**
+	 * The default value for the maximum of the concurrent running worker threads.
+	 */
+	private static final int MAX_WORKER_THREADS = 5;
+	
+	/**
+	 * Private constructor to guarantee that only valid values are inside a properties object.
+	 */
+	private SettingProperties() {
+		super();
+	}
+	
+	/**
+	 * <p>Creates a new properties object. If there's a properties file the values are taken, if there isn't
+	 * one default values are taken.</p>
+	 * <h2>Default Values</h2>
+	 * <table border="1">
+	 * <tr>
+	 * <td><b>Name</b></td>
+	 * <td><b>Value<b></td>
+	 * </tr>
+	 * <tr>
+	 * <td>Maximal concurrent running worker threads.</td>
+	 * <td>5</td>
+	 * </tr>
+	 * </table>
+	 * @param context
+	 * @return
+	 */
+	public static SettingProperties from(Context context) {
+		SettingProperties props = new SettingProperties();
+		
+		try {
+			
+		} catch(IOException e) {
+			
+		}
+		
+		return props;
+	}
+}
