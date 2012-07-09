@@ -17,6 +17,8 @@ public class Request {
 	
 	public static final String REQUEST_URL = "REQUEST_URL";
 	
+	public static final String REQUEST_CLASS = "REQUEST_CLASS";
+	
 	public static final String REQUEST_ERROR = "REQUEST_ERROR";
 	
 	public static final String REQUEST_ERROR_MESSAGE = "REQUEST_ERROR_MESSAGE";
@@ -129,9 +131,10 @@ public class Request {
 	
 	/**
 	 * Creates an Intent for sending the request to the http intent service. Attention: RequestTransformer could alter the data so executing this method twice could bare to different results!
+	 * @param clazz The type of the producer object which should handle the response from the service.
 	 * @return
 	 */
-	public Intent create() {
+	public Intent create(Class<?> clazz) {
 		Intent i = new Intent();
 		Bundle extras = new Bundle();
 		Request req = this;
@@ -147,6 +150,7 @@ public class Request {
 		extras.putLong(REQUEST_ID, statusHelper.createNewRequest());
 		extras.putString(REQUEST_URL, destAddress);
 		extras.putInt(HTTP_TYPE, HttpMethod.asNumeric(method));
+		extras.putSerializable(REQUEST_CLASS, clazz);
 		i.putExtras(extras);
 		
 		return i;

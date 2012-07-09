@@ -1,0 +1,10 @@
+package at.fundev.restl.processor;
+
+import java.io.InputStream;
+
+/**
+ * <p></p>
+ */
+public interface Producer {
+	public Result produce(InputStream input);
+}

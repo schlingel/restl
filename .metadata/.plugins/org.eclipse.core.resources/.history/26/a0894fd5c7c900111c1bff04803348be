@@ -1,0 +1,137 @@
+package at.fundev.restl.service;
+
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
+import at.fundev.restl.administration.RequestStatusHelper;
+import at.fundev.restl.administration.Status;
+import at.fundev.restl.processor.Producer;
+import at.fundev.restl.request.Request;
+
+/**
+ * <p>The worker thread implementation. A worker thread just processes one request at a time. When it finished, it writes
+ * the result to the disk if possible and notifies the service that it finished. After that it exits.</p>
+ * <p>The service starts than the next thread if needed.</p>
+ */
+public class HttpFetcherThread extends Thread {
+	/**
+	 * Used to package the finished intent to the result. 
+	 */
+	public static final String RESULT_INTENT_KEY = "RESULT_INTENT_KEY";
+	
+	/**
+	 * The service handler object. Needed to notify the service when the thread finishes.
+	 */
+	private Handler serviceHandler;
+	
+	/**
+	 * The request intent. Contains all needed data like the target url.
+	 */
+	private Intent requestIntent;
+	
+	/**
+	 * The status helper object to change the status of the received request.
+	 */
+	private RequestStatusHelper status;
+	
+	/**
+	 * The request id of the request which is processed by this worker thread.
+	 */
+	private final long requestID;
+	
+	/**
+	 * Initializes the worker thread. The handler is needed to notify the service when the request finishes, the intent contains
+	 * all needed data for processing the request.
+	 * @param serviceHandler
+	 * @param requestIntent
+	 */
+	public HttpFetcherThread(Handler serviceHandler, Intent requestIntent) {
+		this.serviceHandler = serviceHandler;
+		this.requestIntent = requestIntent;
+		this.requestID = requestIntent.getExtras().getLong(Request.REQUEST_ID);
+	}
+	
+	/**
+	 * Gets the ID of the process which is processed by this request.
+	 * @return
+	 */
+	public long getRequestID() {
+		return requestID;
+	}
+	
+	/**
+	 * <p>Excutes the request if possible. To start the network communication the target url and the request ID is required.</p>
+	 * <p>When the URL is in the intent extras, the thread does the following things:</p>
+	 * <ol>
+	 * <li>Sets the status of the request to <i>processing</i>.</li>
+	 * <li>Opens the URLConnection and tries to fetch the data.</li>
+	 * <li>Sets the status of the request to finished if the call <i>succeeded</i> (HTTP errors are currently not handled.), to <i>error</i> otherwise.</li>
+	 * </ol>
+	 */
+	@Override
+	public void run() {
+		long id = requestIntent.getExtras().getLong(Request.REQUEST_ID);
+		Message result = new Message();
+		
+		if(isIntentValid()) {
+			status.setStatus(id, Status.Processing);
+			result = fetchRequestAndAppendResult(id, result);
+		} else {
+			result = setAsErrorMessage(id, result, "Request intent is not valid!", null);
+		}
+		
+		serviceHandler.handleMessage(result);
+	}
+	
+	/**
+	 * <p>Tries to execute the request and appends the result. If it succeeds the status
+	 * in the DB is set to Finished, otherwise to Error.</p>
+	 * @param msg
+	 * @return
+	 */
+	private Message fetchRequestAndAppendResult(long requestID, Message msg) {
+		
+		
+		
+		return msg;
+	}
+	
+	private Producer getRequestProcessor() {
+		Class<?> clazz = (Class<?>)requestIntent.getExtras().getSerializable(Request.REQUEST_CLASS);
+		
+		
+		
+		return null;
+	}
+	
+	/**
+	 * <p>Creates an error message. An error message contains three properties:</p>
+	 * <ul>
+	 * <li>Request ID</li>
+	 * <li>Error Message</li>
+	 * <li>Error Exception</li>
+	 * </ul>
+	 * @param requestID
+	 * @param msg
+	 * @return
+	 */
+	private Message setAsErrorMessage(long requestID, Message msg, String errMsg, Exception exc) {
+		status.setStatus(requestID, Status.Error);
+		
+		msg.getData().putLong(Request.REQUEST_ID, requestID);
+		msg.getData().putString(Request.REQUEST_ERROR_MESSAGE, errMsg);
+		msg.getData().putSerializable(Request.REQUEST_ERROR, exc);
+		
+		return msg;
+	}
+	
+	/**
+	 * Checks if the intent contains the request ID and the target url.
+	 * @return
+	 */
+	private boolean isIntentValid() {
+		return (requestIntent != null) &&
+				requestIntent.getExtras().containsKey(Request.REQUEST_ID) &&
+				requestIntent.getExtras().containsKey(Request.REQUEST_URL);
+	}
+}

@@ -1,0 +1,10 @@
+package at.fundev.restl.processor;
+
+import java.io.InputStream;
+
+/**
+ * The Consumer Interface is used to process the resulting request.
+ */
+public interface Producer {
+	public Result produce(InputStream input);
+}

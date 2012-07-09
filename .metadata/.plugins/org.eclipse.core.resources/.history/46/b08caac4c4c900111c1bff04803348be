@@ -1,0 +1,8 @@
+package at.fundev.restl.processor;
+
+/**
+ * The Consumer Interface is used to process the resulting request.
+ */
+public interface Consumer {
+
+}

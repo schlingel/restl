@@ -1,0 +1,24 @@
+package at.fundev.restl.processor;
+
+import at.fundev.restl.administration.Status;
+
+/**
+ * The Consumer Interface is used to process the resulting request.
+ */
+public interface Consumer {
+	/**
+	 * Inner Type which is used to return a tuple of values.
+	 */
+	public static class Result {
+		/**
+		 * The status of the call which should be either Error or Finished.
+		 */
+		private Status status;
+		
+		/**
+		 * The path of the serialized result which may be written to disk. Can
+		 * be null.
+		 */
+		private String path;
+	}
+}

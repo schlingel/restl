@@ -1,0 +1,13 @@
+package at.fundev.restl.processor;
+
+/**
+ * The Consumer Interface is used to process the resulting request.
+ */
+public interface Consumer {
+	/**
+	 * Inner Type which is used to return a tuple of values.
+	 */
+	public static class Result {
+		private 
+	}
+}

@@ -1,0 +1,13 @@
+package at.fundev.restl.processor;
+
+import java.io.Serializable;
+
+import android.os.Bundle;
+import at.fundev.restl.administration.Status;
+
+/**
+ * The Consumer Interface is used to process the resulting request.
+ */
+public interface Consumer {
+
+}

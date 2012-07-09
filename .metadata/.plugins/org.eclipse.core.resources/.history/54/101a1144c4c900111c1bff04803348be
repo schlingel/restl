@@ -1,0 +1,56 @@
+package at.fundev.restl.processor;
+
+import java.io.Serializable;
+
+import android.os.Bundle;
+import at.fundev.restl.administration.Status;
+
+/**
+ * The Consumer Interface is used to process the resulting request.
+ */
+public interface Consumer {
+	/**
+	 * Inner Type which is used to return a tripple of values.
+	 */
+	public static class Result {
+		/**
+		 * The status of the call which should be either Error or Finished.
+		 */
+		private Status status;
+		
+		/**
+		 * The path of the serialized result which may be written to disk. Can
+		 * be null.
+		 */
+		private String path;
+		
+		/**
+		 * 
+		 */
+		private Bundle content;
+		
+		/**
+		 * Sets the status.
+		 * @param status
+		 */
+		public void setStatus(Status status) {
+			this.status = status;
+		}
+		
+		/**
+		 * Gets the status.
+		 * @return
+		 */
+		public Status getStatus() { return status; }
+		
+		/**
+		 * Sets the path of the serialized result.
+		 * @param path
+		 */
+		public void setPath(String path) {
+			this.path = path;
+		}
+		
+		
+	}
+}

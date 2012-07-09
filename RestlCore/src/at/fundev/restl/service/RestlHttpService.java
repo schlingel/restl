@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.os.Handler.Callback;
 import android.os.IBinder;
 import android.os.Message;
-import android.os.PowerManager;
 import at.fundev.restl.administration.RequestStatusHelper;
 import at.fundev.restl.administration.Status;
 import at.fundev.restl.request.Request;
@@ -114,10 +113,30 @@ public class RestlHttpService extends Service implements Callback {
 	 */
 	public boolean handleMessage(Message msg) {
 		Intent resultIntent = msg.getData().getParcelable(HttpFetcherThread.RESULT_INTENT_KEY);
+		long requestID = msg.getData().getLong(Request.REQUEST_ID);
+		
+		removeJobFromQueue(requestID);
 		sendBroadcast(resultIntent);
 		
 		process();
 		
 		return false;
 	}	
+	
+	/**
+	 * Removes the job from the worker thread queue.
+	 * @param requestID
+	 */
+	private void removeJobFromQueue(Long requestID) {
+		synchronized (workerThreads) {
+			int length = workerThreads.size();
+			for(int i = 0; i < length; i++) {
+				HttpFetcherThread cur = workerThreads.get(i);
+				if(requestID.compareTo(cur.getRequestID()) == 0) {
+					workerThreads.remove(i);
+					break;
+				}
+			}
+		}
+	}
 }

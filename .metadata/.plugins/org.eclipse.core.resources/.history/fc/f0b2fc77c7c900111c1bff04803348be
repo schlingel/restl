@@ -1,0 +1,18 @@
+package at.fundev.restl.service;
+
+import android.app.IntentService;
+import android.content.Intent;
+
+public class asdf extends IntentService {
+	public asdf() {
+		super(asdf.class.getSimpleName());
+	}
+	
+	
+	@Override
+	protected void onHandleIntent(Intent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
