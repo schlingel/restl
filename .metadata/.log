@@ -418,3 +418,6 @@ Binding(CTRL+SHIFT+U,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 4 4 2012-07-10 22:26:42.984
+!MESSAGE Invalid preference page path: XML Syntax

@@ -36,7 +36,7 @@ public class Request {
 	
 	public static final String PRODUCER_PREFIX = "no.nw";
 	
-	public static final String RESULT_INTENT_DATA = "at.fundev.restl.request.RESULT";
+	public static final String RESULT_INTENT_DATA = "";
 	
 	/**
 	 * A helper object.
