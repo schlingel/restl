@@ -75,4 +75,20 @@ public class RequestStatusHelper {
 					null);
 		}
 	}
+	
+	/**
+	 * Sets the path value of the given row.
+	 * @param id
+	 * @param path
+	 */
+	public void setPath(long id, String path) {
+		ContentValues values = new ContentValues();
+		values.put(StatusTable.COLUMN_PATH, path);
+		
+		provider.update(
+				Uri.parse(String.format(ROW_ENTRY_URI, id)), 
+				values, 
+				null, 
+				null);
+	}
 }

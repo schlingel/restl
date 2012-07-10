@@ -45,4 +45,22 @@ public enum HttpMethod {
 			return HttpMethod.Get;
 		}
 	}
+	
+	/**
+	 * Returns a string representing the given HttpMethod. If the parameter is null it defaults to GET.
+	 * @param method
+	 * @return
+	 */
+	public static String toString(HttpMethod method) {
+		switch(method) {
+			case Delete:
+				return "DELETE";
+			case Post:
+				return "POST";
+			case Put:
+				return "PUT";
+			default:
+				return "GET";
+		}
+	}
 }

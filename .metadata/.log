@@ -362,3 +362,59 @@ Contains: Could not delete: C:\Users\zombie\restl\RestlCore\bin\classes\at.
 
 !ENTRY org.eclipse.ui 4 4 2012-07-09 11:34:39.358
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-07-10 21:15:52.033 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_31
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_AT
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.mylyn.tasks.ui 2 0 2012-07-10 21:15:56.665
+!MESSAGE No search provider was registed. Tasks search is not available.
+
+!ENTRY org.eclipse.jface 2 0 2012-07-10 21:15:59.219
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-07-10 21:15:59.220
+!MESSAGE A conflict occurred for CTRL+SHIFT+D:
+Binding(CTRL+SHIFT+D,
+	ParameterizedCommand(Command(org.eclipse.jdt.debug.ui.commands.Display,Display,
+		Display result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(CTRL+SHIFT+D,
+	ParameterizedCommand(Command(com.aptana.ide.syncing.ui.commands.download,Download...,
+		,
+		Category(com.aptana.ide.syncing.ui.commands.category,File Transfer,File Transfer Commands,true),
+		com.aptana.ide.syncing.ui.handlers.DownloadHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+D,
+	ParameterizedCommand(Command(org.radrails.rails.ui.command.debug.server,Debug Server,
+		,
+		Category(org.radrails.rails.ui.category,Rails,null,true),
+		org.radrails.rails.internal.ui.commands.DebugServerHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-07-10 21:15:59.220
+!MESSAGE A conflict occurred for CTRL+SHIFT+U:
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.occurrences.in.file.quickMenu,Show Occurrences in File Quick Menu,
+		Shows the Occurrences in File quick menu,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(com.aptana.ide.syncing.ui.commands.upload,Upload...,
+		,
+		Category(com.aptana.ide.syncing.ui.commands.category,File Transfer,File Transfer Commands,true),
+		com.aptana.ide.syncing.ui.handlers.UploadHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)

@@ -1,15 +1,25 @@
 package at.fundev.restl.service;
 
+import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import at.fundev.restl.administration.RequestStatusHelper;
 import at.fundev.restl.administration.Status;
 import at.fundev.restl.processor.Producer;
+import at.fundev.restl.processor.Result;
+import at.fundev.restl.request.HttpMethod;
 import at.fundev.restl.request.Request;
 
 /**
@@ -19,6 +29,20 @@ import at.fundev.restl.request.Request;
  */
 public class HttpFetcherThread extends Thread {
 	private static final String TAG = HttpFetcherThread.class.getName();
+	
+	/**
+	 * All parameter which shouldn't be included in the parameter call.
+	 */
+	private static final String[] NOT_FOR_NETWORK_REQUEST_PARAMS = {
+		Request.CONTENT_TYPE,
+		Request.HTTP_TYPE,
+		Request.REQUEST_ID,
+		Request.REQUEST_URL,
+		Request.MIXED_CONTENT_NAME,
+		Request.MIXED_CONTENT_NAME_IDENTIFIER,
+		Request.REQUEST_ERROR,
+		Request.REQUEST_ERROR_MESSAGE
+	};
 	
 	/**
 	 * Used to package the finished intent to the result. 
@@ -97,9 +121,17 @@ public class HttpFetcherThread extends Thread {
 	 */
 	private Message fetchRequestAndAppendResult(long requestID, Message msg) {
 		Producer producer = getRequestProcessor();
+		InputStream resultStream = executeNetworkRequest();
 		
-		if(producer != null) {
+		if(producer != null && resultStream != null) {
+			Bundle params = getProducerParams();
+			Result result = producer.produce(resultStream, params);
 			
+			status.setStatus(requestID, Status.Finished);
+			status.setPath(requestID, result.getPath());
+			
+			msg.getData().putAll(result.getContent());
+			msg.getData().putLong(Request.REQUEST_ID, requestID);
 		} else {
 			msg = setAsErrorMessage(requestID, msg, "Couldn't instant class for producer", null);
 		}
@@ -107,11 +139,117 @@ public class HttpFetcherThread extends Thread {
 		return msg;
 	}
 	
-	private InputStream executeNetworkRequest() throws IOException {
-		String url = requestIntent.getExtras().getString(Request.REQUEST_URL);
-		
+	/**
+	 * Executes the network request and returns the resulting input stream.
+	 * @return
+	 */
+	private InputStream executeNetworkRequest() {
+		try {
+			HttpURLConnection connection = getConnection();
+			OutputStream stream = connection.getOutputStream();
+			OutputStreamWriter writer = new OutputStreamWriter(new BufferedOutputStream(stream));
+			writer.write(getParameterString());
+			writer.flush();
+			writer.close();
+			
+			return connection.getInputStream();			
+		} catch(MalformedURLException e) {
+			Log.e(TAG, e.getMessage(), e);
+		} catch(IOException e) {
+			Log.e(TAG, e.getMessage(), e);
+		}
 		
 		return null;
+	}
+	
+	/**
+	 * Creates a default HttpURLConnection before appending request parameter.
+	 * @return
+	 */
+	private HttpURLConnection getConnection() throws IOException {
+		String sUrl = requestIntent.getExtras().getString(Request.REQUEST_URL);
+		String paramContentType = requestIntent.getExtras().getString(Request.CONTENT_TYPE);
+		
+		URL host = new URL(sUrl);
+		HttpURLConnection connection = (HttpURLConnection)host.openConnection();
+			
+		connection.setDoInput(true);
+		connection.setDoOutput(true);
+		connection.setChunkedStreamingMode(0);
+		connection.setRequestProperty(Request.CONTENT_TYPE, paramContentType == null ? "application/json;charset=utf-8" : paramContentType);
+		connection.setRequestMethod(getHttpMethodFrom());		
+		
+		return connection;
+	}
+	
+	/**
+	 * Returns the set http method of the request intent.
+	 * @return
+	 */
+	private String getHttpMethodFrom() {
+		if(requestIntent == null) {
+			return HttpMethod.toString(null);
+		} else {
+			return HttpMethod.toString(HttpMethod.fromNumeric(requestIntent.getExtras().getInt(Request.HTTP_TYPE)));
+		}
+	}
+	
+	/**
+	 * Returns the parameters as one string for the connection.
+	 * @return
+	 */
+	private String getParameterString() {
+		StringBuffer buffer = new StringBuffer();
+		
+		for(String name : requestIntent.getExtras().keySet()) {
+			if(shouldIncludeParameter(name)) {
+				buffer.append(String.format("%s=%s",
+						URLEncoder.encode(name),
+						URLEncoder.encode(requestIntent.getExtras().getString(name))));
+				buffer.append("&");
+			}
+		}
+		
+		if(buffer.length() > 0) {
+			buffer.replace(buffer.length() - 1, buffer.length(), "");
+		}
+		
+		return buffer.toString();
+	}
+	
+	/**
+	 * Checks if the given name is for the network parameters.
+	 * @param name
+	 * @return
+	 */
+	private boolean shouldIncludeParameter(String name) {
+		if(name.toLowerCase().startsWith(Request.PRODUCER_PREFIX)) {
+			return false;
+		}
+		
+		for(String notForRequest : NOT_FOR_NETWORK_REQUEST_PARAMS) {
+			if(notForRequest.equalsIgnoreCase(name)) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	/**
+	 * Filters the request intent parameters and returns the parameters for the producer.
+	 * @return
+	 */
+	private Bundle getProducerParams() {
+		Bundle params = new Bundle();
+		
+		for(String name : requestIntent.getExtras().keySet()) {
+			if(name.toLowerCase().startsWith(Request.PRODUCER_PREFIX)) {
+				params.putString(name, requestIntent.getExtras().getString(name));
+			}
+		}
+		
+		return params;
 	}
 	
 	/**

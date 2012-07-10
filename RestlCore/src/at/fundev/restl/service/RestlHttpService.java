@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Handler.Callback;
 import android.os.IBinder;
 import android.os.Message;
+import android.util.Log;
 import at.fundev.restl.administration.RequestStatusHelper;
 import at.fundev.restl.administration.Status;
 import at.fundev.restl.request.Request;
@@ -19,6 +20,8 @@ import at.fundev.restl.request.Request;
  * <p>For details to the Request the service understands, check {@see Request}
  */
 public class RestlHttpService extends Service implements Callback {
+	private static final String TAG = RestlHttpService.class.getName();
+	
 	/**
 	 * Contains the jobs represented by intents.
 	 */
@@ -58,14 +61,18 @@ public class RestlHttpService extends Service implements Callback {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		synchronized (jobQueue) {
-			long id = intent.getExtras().getLong(Request.REQUEST_ID);
-			status.setStatus(id, Status.Pending);
-			jobQueue.offer(intent);			
+			if(intent != null && intent.getExtras() != null) {
+				long id = intent.getExtras().getLong(Request.REQUEST_ID);
+				status.setStatus(id, Status.Pending);
+				jobQueue.offer(intent);							
+			} else {
+				Log.i(TAG, "Got null as request intent or request intent extras. Ignoring");
+			}
 		}
 		
 		process();
 		
-		// intents are stored internal and 
+		// starts sticky because it stops itself when it's done.
 		return START_STICKY;
 	}
 	

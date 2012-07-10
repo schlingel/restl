@@ -13,6 +13,11 @@ import at.fundev.restl.administration.RequestStatusHelper;
  * The main class for creating requests. This class is also used for write and reading the needed information to parcelables.
  */
 public class Request {
+	/**
+	 * Adding a parameter with this name enables the user to set a content type for the httpurlconnection other than "application/json;charset=utf-8"
+	 */
+	public static final String CONTENT_TYPE = "Content-type";
+	
 	public static final String REQUEST_ID = "REQUEST_ID";
 	
 	public static final String REQUEST_URL = "REQUEST_URL";
@@ -28,6 +33,8 @@ public class Request {
 	public static final String MIXED_CONTENT_NAME_IDENTIFIER = "MIXED_CONTENT_NAME_IDENTIFIER";
 	
 	public static final String HTTP_TYPE = "HTTP_TYPE";
+	
+	public static final String PRODUCER_PREFIX = "no.nw";
 	
 	/**
 	 * A helper object.
@@ -122,8 +129,9 @@ public class Request {
 	}
 	
 	/**
-	 * Adds an parameter with the given name to the request object. Use the setter of the returned
-	 * helper object to add the value.
+	 * <p>Adds an parameter with the given name to the request object. Use the setter of the returned
+	 * helper object to add the value.</p>
+	 * <p>Parameters can be addressed to the used {@see Producer} object. To address a parameter to the Producer object use the prefix <b>no.nw</b> for the parameter. E.g. "no.nw.param1" would be routed to the Producer and would not be used as parameter for the HTTP call.</p>
 	 */
 	public RequestParamHelper addParam(String name) {
 		return new RequestParamHelper(this, name);
