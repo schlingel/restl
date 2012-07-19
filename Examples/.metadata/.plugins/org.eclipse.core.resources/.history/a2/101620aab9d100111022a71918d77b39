@@ -1,0 +1,14 @@
+<?php
+$dbname = DB_NAME;
+$mytable = TABLE_NOTES;
+
+$base= new SQLiteDatabase($dbname, 0666, $err);
+if ($err)  exit($err);
+
+$query = "CREATE TABLE $mytable(
+            id NOT NULL PRIMARY KEY,
+                        
+            )";
+            
+$results = $base->queryexec($query);
+?>

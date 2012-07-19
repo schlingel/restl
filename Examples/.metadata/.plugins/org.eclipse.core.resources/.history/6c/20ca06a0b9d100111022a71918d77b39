@@ -1,0 +1,18 @@
+<?php
+$dbname = DB_NAME;
+$mytable = TABLE_NOTES;
+
+$base= new SQLiteDatabase($dbname, 0666, $err);
+if ($err)  exit($err);
+
+$query = "CREATE TABLE $mytable(
+            ID bigint(20) NOT NULL PRIMARY KEY,
+            post_author bigint(20) NOT NULL,            
+            post_date datetime,
+            post_content longtext,
+            post_title text,
+            guid VARCHAR(255)            
+            )";
+            
+$results = $base->queryexec($query);
+?>

@@ -1,0 +1,12 @@
+<?php
+	$title = $_POST['title'];
+	$note = $_POST['note'];
+
+	$conn = new SQLiteDatabase(DB_NAME, 0666, $err);
+	
+	if($err) {
+		exit($err);
+	} else {
+		$query = "INSERT INTO " + TABLE_NOTES + " (title, note) VALUES ('{$title}', '{$note}')";
+	}
+?>

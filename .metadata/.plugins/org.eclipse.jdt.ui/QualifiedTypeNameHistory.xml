@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.net.URL"/>
-<fullyQualifiedTypeName name="java.net.MalformedURLException"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.lang.Float"/>
 <fullyQualifiedTypeName name="java.lang.Long"/>
@@ -10,7 +8,6 @@
 <fullyQualifiedTypeName name="at.fundev.restl.request.ParamHelper"/>
 <fullyQualifiedTypeName name="at.fundev.restl.request.RequestTransformer"/>
 <fullyQualifiedTypeName name="android.content.IntentFilter"/>
-<fullyQualifiedTypeName name="at.fundev.restl.request.HttpMethod"/>
 <fullyQualifiedTypeName name="android.os.Parcelable.Creator"/>
 <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
@@ -18,8 +15,6 @@
 <fullyQualifiedTypeName name="android.net.Uri.Builder"/>
 <fullyQualifiedTypeName name="at.fundev.restl.administration.RequestStatusProvider"/>
 <fullyQualifiedTypeName name="android.net.Uri"/>
-<fullyQualifiedTypeName name="android.content.ContentValues"/>
-<fullyQualifiedTypeName name="at.fundev.restl.administration.StatusTable"/>
 <fullyQualifiedTypeName name="at.fundev.restl.request.Request"/>
 <fullyQualifiedTypeName name="android.os.PowerManager"/>
 <fullyQualifiedTypeName name="android.os.PowerManager.WakeLock"/>
@@ -39,14 +34,27 @@
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="at.fundev.restl.administration.Status"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="at.fundev.restl.processor.Consumer.Result"/>
 <fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="android.app.IntentService"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
-<fullyQualifiedTypeName name="at.fundev.restl.service.HttpFetcherThread"/>
 <fullyQualifiedTypeName name="at.fundev.restl.processor.Producer"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="java.net.URLConnection"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="at.fundev.restl.request.HttpMethod"/>
+<fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="java.net.URLEncoder"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
+<fullyQualifiedTypeName name="java.net.MalformedURLException"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="at.fundev.restl.service.HttpFetcherThread"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="at.fundev.restl.processor.Result"/>
+<fullyQualifiedTypeName name="android.content.ContentValues"/>
+<fullyQualifiedTypeName name="at.fundev.restl.administration.StatusTable"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="at.fundev.restl.service.RestlHttpService"/>
 </qualifiedTypeNameHistroy>

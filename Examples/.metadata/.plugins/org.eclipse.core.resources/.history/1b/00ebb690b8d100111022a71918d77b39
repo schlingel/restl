@@ -1,0 +1,6 @@
+<?php
+	$title = $_POST['title'];
+	$note = $_POST['note'];
+
+	$conn = new SQLiteDatabase(DB_NAME, 0666, $err);
+?>
