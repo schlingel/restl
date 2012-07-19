@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;NoteClient/lib&apos; to &apos;libs&apos;" description="Rename resource &apos;lib&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="lib" name="libs" stamp="1342714069933" updateReferences="true"/>
+</session>

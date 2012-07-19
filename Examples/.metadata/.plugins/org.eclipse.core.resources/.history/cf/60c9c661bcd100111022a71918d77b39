@@ -1,0 +1,7 @@
+package at.fundev.restl.examples.notes;
+
+import android.widget.BaseAdapter;
+
+public class NotesListAdapter extends BaseAdapter {
+
+}

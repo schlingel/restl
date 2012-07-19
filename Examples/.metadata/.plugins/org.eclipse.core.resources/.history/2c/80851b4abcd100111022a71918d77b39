@@ -1,0 +1,5 @@
+package at.fundev.restl.examples.notes;
+
+public class NotesListAdapter {
+
+}

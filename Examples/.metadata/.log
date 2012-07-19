@@ -122,3 +122,6 @@ org.jruby.exceptions.RaiseException: (Errno::EINVAL) =::
 
 !ENTRY org.eclipse.ui 4 4 2012-07-19 17:50:47.197
 !MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-07-19 18:02:11.065
+!MESSAGE Failed to load properties file for project 'NoteClient'

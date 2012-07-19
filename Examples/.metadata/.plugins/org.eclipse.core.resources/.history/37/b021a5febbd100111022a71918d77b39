@@ -1,0 +1,5 @@
+package at.fundev.restl.examples.notes.models;
+
+public class Note {
+
+}

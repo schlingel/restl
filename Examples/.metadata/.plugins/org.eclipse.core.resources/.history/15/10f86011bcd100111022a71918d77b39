@@ -1,0 +1,13 @@
+package at.fundev.restl.examples.notes.models;
+
+import com.google.gson.annotations.SerializedName;
+
+public class Note {
+	@SerializedName("title")
+	private String title;
+	
+	@SerializedName("note")
+	private String note;
+	
+	
+}
