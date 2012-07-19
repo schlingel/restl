@@ -11,15 +11,11 @@ import android.os.Bundle;
  * the activity.</p>
  */
 public class RestlClient {
-	/**
-	 * Called before the activity view is destroyed.
-	 * @param bundle
-	 */
 	public void onSaveInstanceState(Bundle bundle) {
 		
 	}
 	
-	public void onRestoreInstanceState() {
+	public void onPause() {
 		
 	}
 	
