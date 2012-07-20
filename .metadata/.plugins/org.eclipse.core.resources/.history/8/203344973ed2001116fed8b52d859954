@@ -1,0 +1,55 @@
+package at.fundev.restl.utils;
+
+import android.content.Intent;
+import android.os.Bundle;
+
+/**
+ * <p>A restl client object is used to store the IDs of all pending requests. Not stored are requests which were created but not send.</p>
+ * <p>If this class is used the methods <strong>onSaveInstanceState</strong> and <strong>onRestoreInstanceState</strong> from the activity
+ * class must be overwritten and call the corresponding methods in the client object. This methods have no guarantee to be called so beware 
+ * that this is thought as use for quick user induced activity change with the intent to return to the
+ * the activity.</p>
+ */
+public class RestlClient {
+	/**
+	 * Identifier used for storing the open request IDs.
+	 */
+	private String identifier;
+	
+	/**
+	 * <p>Initializes the RestlClient object with the given identifier. For persisting the open IDs, the 
+	 * identifier is used to store the IDs as CSV in the preferences.</p>
+	 * <p>If you change the context of your activity but stay at the same activity, e.g. when you're using
+	 * a ViewPager, a GalleryWidget or similar for swiping through different request triggering views use
+	 * {@see changeIdentifier} to seperate this views.</p>
+	 * @param identifier Key used for storing the request IDs as CSV in the preferences
+	 */
+	public RestlClient(String identifier) {
+		
+	}
+	
+	/**
+	 * <p>This method writes the current open request IDs to the preferences with the old identifier and sets the
+	 * objects identifier to the new identifier.</p>
+	 * @param identifier
+	 */
+	public void changeIdentifier(String identifier) {
+		
+	}
+	
+	/**
+	 * Called before the activity view is destroyed. Saves the current open request IDs as CSV to the preferences.
+	 * @param bundle
+	 */
+	public void onPause() {
+		
+	}
+	
+	public void onResume() {
+		
+	}
+	
+	public void send(Intent request) {
+		
+	}
+}
