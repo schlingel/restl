@@ -1,0 +1,10 @@
+package at.fundev.restl.utils;
+
+/**
+ * Simple helper object to enable fluid typing.
+ */
+public class RequestHandlerConfigHelper {
+	public RequestHandlerConfigHelper(RestlClient rc) {
+		
+	}
+} 

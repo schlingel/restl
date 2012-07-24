@@ -1,0 +1,11 @@
+package at.fundev.restl.utils;
+
+/**
+ * This interface is used to implement handlers for the REST responses. Every
+ * handler class should have an unique ID.
+ * @author zombie
+ *
+ */
+public class ResponseHandler {
+
+}

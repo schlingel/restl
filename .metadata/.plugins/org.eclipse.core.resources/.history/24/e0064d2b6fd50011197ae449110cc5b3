@@ -1,0 +1,26 @@
+package at.fundev.restl.utils;
+
+/**
+ * Simple helper object to enable fluid typing.
+ */
+public class RequestHandlerConfigHelper {
+	private RestlClient rc;
+	
+	private RequestHandlerMapping mapping;
+	
+	public RequestHandlerConfigHelper(RestlClient rc, RequestHandlerMapping mapping) {
+		this.rc = rc;
+		this.mapping = mapping;
+	}
+	
+	public RestlClient addHandler(ResponseHandler responseHandler) {
+		if(responseHandler != null) {
+			mapping.setResponseHandlerID(responseHandler.id());			
+		}
+		
+		return rc;
+		
+	}
+	
+	public 
+} 

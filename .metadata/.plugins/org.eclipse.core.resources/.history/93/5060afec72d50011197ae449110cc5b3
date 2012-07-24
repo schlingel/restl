@@ -1,0 +1,63 @@
+package at.fundev.restl.utils;
+
+import android.content.Context;
+import android.content.Intent;
+import at.fundev.restl.request.Request;
+
+/**
+ * Simple helper object to enable fluid typing.
+ */
+public class RequestSender {
+	private RestlClient rc;
+	
+	private Context context;
+	
+	private Intent request;
+	
+	public RequestSender(Context context, RestlClient rc, Intent request) {
+		this.rc = rc;
+		this.request = request;
+		this.context = context;
+	}
+	
+	private RequestHandlerMapping getMapping() {
+		RequestHandlerMapping mapping = rc.getRequestHandlerMapping(requestID());
+		if(mapping == null) {
+			mapping = new RequestHandlerMapping(requestID());
+		}
+	
+		return mapping;
+	}
+	
+	private long requestID() {
+		return request.getExtras().getLong(Request.REQUEST_ID);
+	}
+	
+	public RequestSender addResponseHandler(ResponseHandler responseHandler) {
+		RequestHandlerMapping mapping = getMapping();
+		
+		if(responseHandler != null) {
+			mapping.setResponseHandlerID(responseHandler.id());
+			rc.addResponseHandler(responseHandler);
+			rc.addRequestHandlerMapping(mapping);
+		}
+		
+		return this;
+	}
+	
+	public RequestSender addErrorHandler(ErrorHandler errorHandler) {
+		RequestHandlerMapping mapping = getMapping();
+		
+		if(errorHandler != null) {
+			mapping.setErrorHandlerID(errorHandler.id());
+			rc.addErrorHandler(errorHandler);
+			rc.addRequestHandlerMapping(mapping);
+		}
+	}
+	
+	public RestlClient send() {
+		context.startService(request);
+		
+		return rc;
+	}
+} 

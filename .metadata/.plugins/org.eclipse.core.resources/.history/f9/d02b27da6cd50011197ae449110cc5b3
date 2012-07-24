@@ -1,0 +1,17 @@
+package at.fundev.restl.utils;
+
+/**
+ * <p>The request handler mapping maps a request to its error and response handler.
+ */
+public class RequestHandlerMapping {
+	/**
+	 * The Request ID
+	 */
+	private long requestID;
+	
+	private long 
+	
+	public RequestHandlerMapping() {
+		
+	}
+}

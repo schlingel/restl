@@ -1,0 +1,29 @@
+package at.fundev.restl.utils;
+
+import android.content.Intent;
+
+/**
+ * Simple helper object to enable fluid typing.
+ */
+public class RequestSender {
+	private RestlClient rc;
+	
+	private RequestHandlerMapping mapping;
+	
+	private Intent request;
+	
+	public RequestSender(RestlClient rc, Intent request) {
+	}
+	
+	public RestlClient addHandler(ResponseHandler responseHandler) {
+		if(responseHandler != null) {
+			mapping.setResponseHandlerID(responseHandler.id());			
+		}
+		
+		return rc;
+	}
+	
+	public RestlClient send() {
+		return rc;
+	}
+} 

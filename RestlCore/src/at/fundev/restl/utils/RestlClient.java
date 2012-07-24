@@ -1,5 +1,11 @@
 package at.fundev.restl.utils;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,13 +19,44 @@ import android.os.Bundle;
  * request responses. The IDs of the requests and the IDs of the handler objects are stored as tuple within as preferences. The key is the given identifier</p>
  * <p>If you change the handlers of the RestlClient object and the client doesn't have the handler defined in the preferences, the entry is just deleted and ignored.</p>
  */
-// TODO: Add interfaces for Error and Success handlers
-// TODO: Add method for setting default handlers.
+// TODO: Implement broadcast receiver.
 public class RestlClient {
 	/**
 	 * Identifier used for storing the open request IDs.
 	 */
 	private String identifier;
+	
+	/**
+	 * If not null this handler is used for responses which should be processed
+	 * in this client but don't have a corresponding handler object.
+	 */
+	private ErrorHandler defaultErrorHandler;
+
+	/**
+	 * If not null this handler is used for responses which should be processed
+	 * in this client but don't have a corresponding handler object.
+	 */
+	private ResponseHandler defaultResponseHandler;
+	
+	/**
+	 * Contains the list of the added response handlers.
+	 */
+	private List<ResponseHandler> responseHandlers;
+	
+	/**
+	 * Contains the list of the added error handlers.
+	 */
+	private List<ErrorHandler> errorHandlers;
+	
+	/**
+	 * Contains the mapping of request ID to request handler configuration.
+	 */
+	private Map<Long, RequestHandlerMapping> requestHandlerMapping;
+	
+	/**
+	 * The context of the restl client host.
+	 */
+	private Context context;
 	
 	/**
 	 * <p>Initializes the RestlClient object with the given identifier. For persisting the open IDs, the 
@@ -29,8 +66,50 @@ public class RestlClient {
 	 * {@see changeIdentifier} to seperate this views.</p>
 	 * @param identifier Key used for storing the request IDs as CSV in the preferences
 	 */
-	public RestlClient(String identifier) {
-		
+	public RestlClient(Context context, String identifier) {
+		this.identifier = identifier;
+		this.context = context;
+		this.errorHandlers = new ArrayList<ErrorHandler>();
+		this.responseHandlers = new ArrayList<ResponseHandler>();
+		this.requestHandlerMapping = new HashMap<Long, RequestHandlerMapping>();
+	}
+	
+	/**
+	 * Adds the given request handler mapping to the mapping list.
+	 * @param mapping
+	 */
+	public void addRequestHandlerMapping(RequestHandlerMapping mapping) {
+		long id = mapping.getRequestID();
+		requestHandlerMapping.put(id, mapping);
+	}
+	
+	/**
+	 * Returns the request handler mapping with the given request id.
+	 * @param requestID
+	 * @return
+	 */
+	public RequestHandlerMapping getRequestHandlerMapping(long requestID) {
+		return requestHandlerMapping.get(requestID);
+	}
+	
+	/**
+	 * Adds the given error handler to the error handler list if it doesn't exist yet.
+	 * @param handler
+	 */
+	public void addErrorHandler(ErrorHandler handler) {
+		if(!errorHandlers.contains(handler)) {
+			errorHandlers.add(handler);
+		}
+	}
+	
+	/**
+	 * Adds teh given respone handler to the response handler list if it doesn't exist yet.
+	 * @param handler
+	 */
+	public void addResponseHandler(ResponseHandler handler) {
+		if(!responseHandlers.contains(handler)) {
+			responseHandlers.add(handler);
+		}
 	}
 	
 	/**
@@ -61,8 +140,8 @@ public class RestlClient {
 	 * Sends the given request intent to the Restl HTTP/JSON service and registers the request ID as open request.
 	 * @param request
 	 */
-	// TODO: Rewrite to fluid interface for adding addtional error and success handlers for the request.
-	public void send(Intent request) {
-		
+	public RequestSender prepare(Intent request) {
+		RequestSender sender = new RequestSender(context, this, request);
+		return sender;
 	}
 }
